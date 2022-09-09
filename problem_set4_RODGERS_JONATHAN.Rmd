@@ -24,7 +24,7 @@ ouss
 
 ```{r}
 ouss %>%
-  ggplot(aes(x=year, y=admissions_normalized, group=system, color=system)) +
+  ggplot(aes(x = year, y = admissions_normalized, group = system, color = system)) +
   geom_line() +
   geom_point() +
   geom_vline(xintercept = 1996.5) +
@@ -36,7 +36,7 @@ ouss %>%
 
 ```{r}
 ouss %>%
-  mutate(after = year>1996) %>%
+  mutate(after = year > 1996) %>%
   feols(admissions_normalized ~ after + juvenile + after*juvenile, se="hetero", data=.)
 ```
 
